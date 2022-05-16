@@ -1,8 +1,16 @@
-import React from 'react'
+import React from 'react';
+import './Login.css';
+import { signInWithGoogle } from './firebase';
 
-function Login() {
+function Login() { 
   return (
-    <div>Login</div>
+    <div>
+        <h1>Login (with Email)</h1>
+        <button onClick={signInWithGoogle}>Google</button>
+        <h1>{localStorage.getItem("name")}</h1>
+        <h1>{localStorage.getItem("email")}</h1>
+        <img src={localStorage.getItem("profilePic")} />
+    </div>
   )
 }
 
